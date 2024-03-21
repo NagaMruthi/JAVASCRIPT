@@ -1,0 +1,176 @@
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <title>
+        pokemon
+        </title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <style>
+        #op{
+        display: flex;
+        justify-content:flex-start;  
+        }
+        #ol{
+            justify-content:space-between;
+            width:fit-content;
+            height: fit-content;
+            color: white; 
+            border: 2px solid red;
+            background-color: blue;
+            box-shadow: 10px 10px yellow;
+            
+        } 
+    </style>
+</head>
+    <body>
+        <input type="number" id="ol" alert="1 to 500">
+        <button onclick="my()">genrate</button>
+        <div id="op">
+        </div>
+        <script>
+            var y=document.getElementById("ol").value;
+            var z=parseInt(Math.random(y)*500)
+            console.log(y)
+            var str1="https://pokeapi.co/api/v2";
+            var str2="pokemon";
+            function my(){
+            axios.get(`${str1}/${str2}/${z}`).then(function(res){
+                console.log(res.data);
+                var x=res.data;
+            });
+        }
+            function gen(x){
+                var div=document.getElementById("ol");
+                var div2=document.getElementsByClassName("card");
+                var p1=document.createElement("p");
+                p1.innerHTML="Ability::"+x.abilities[0].ability.name;  
+                div.appendChild(p1);
+                var p3=document.createElement("p");
+                p3.innerHTML="weigtht::"+x.weight;
+                div.appendChild(p3);
+                var p3=document.createElement("p");
+                p3.innerHTML="Name::"+x.stats[0].stat.name;
+                div.appendChild(p3);
+                var img=document.createElement("img");
+                img.src=x.sprites.front_default;
+                var p2=document.createElement("p");
+                p2.appendChild(img);
+                div.appendChild(p2);
+                var p4=document.createElement("p");
+                p4.innerHTML="height:"+x.height;
+                div.appendChild(p4);
+            }
+        </script>
+    </body>
+</html> -->
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+     <style>
+    #d{
+         display: flex; 
+         justify-content:row;
+    } 
+    #d li{
+        border:1px solid;
+        border-color:blueviolet;
+        list-style:none;
+        background-color:bisque;
+       font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+       text-transform:capitalize;
+       margin:10px;
+    }
+    #d li img{
+        background-color:lightcoral;
+        border:1px solid;
+        width:100%;
+    }
+    </style>
+    </head>
+    <body>
+    <button onclick="sub()">CREATE</button>
+    <div id="op">
+    <ul id="d">
+    </ul>
+    </div>
+    <script>
+        var div=document.getElementById("op")
+        // 
+    function sub(){
+        div.innerHTML=""; 
+    var str1="https://pokeapi.co/api/v2";
+    var str2="pokemon";
+    var str3=parseInt(Math.random()*500);
+    axios.get(`${str1}/${str2}/${str3}`)
+    .then(function(response){
+    console.log(response.data)
+    var  result=response.data
+    var li1=document.createElement("li")
+    li1.innerHTML="Name:"+result.name
+   
+    var div1=document.createElement("div")
+    div1.innerHTML="AbilityName:"+result.abilities[0].ability.name
+    li1.appendChild(div1)
+    
+    
+    var div2=document.createElement("div")
+    div2.innerHTML="BaseExperience:"+result.base_experience
+    li1.appendChild(div2)
+    
+    
+    var div3=document.createElement("div")
+    div3.innerHTML="GameIndex:"+result.game_indices[0].game_index
+    li1.appendChild(div3)
+    
+    
+    var div4=document.createElement("div")
+    div4.innerHTML="VersionName:"+result.game_indices[0].version.name
+    li1.appendChild(div4)
+    
+    
+    var div5=document.createElement("div")
+    div5.innerHTML="StatName:"+result.stats[0].stat.name
+    li1.appendChild(div5)
+    
+    
+    
+    var div6=document.createElement("div")
+    div6.innerHTML="TypeName:"+result.types[0].type.name
+    li1.appendChild(div6)
+    
+    
+    var div7=document.createElement("div")
+    div7.innerHTML="weight:"+result.weight
+    li1.appendChild(div7)
+    
+    
+    
+    var div8=document.createElement("div")
+    div8.innerHTML="Move:"+result.moves[0].move.name
+    li1.appendChild(div8)
+    
+    
+    var div9=document.createElement("div")
+    div9.innerHTML="MoveMethod:"+result.moves[0].version_group_details[0].move_learn_method.name
+    li1.appendChild(div9)
+    
+    var div10=document.createElement("div")
+    div10.innerHTML="VersionGroup:"+result.moves[0].version_group_details[0].version_group.name
+    li1.appendChild(div10)
+    
+    
+    
+    var img1=document.createElement("img")
+    img1.src=result.sprites.front_default
+    li1.appendChild(img1)
+    
+    
+    var w=document.getElementById("d")
+    w.appendChild(li1)
+    div.appendChild(w)
+    
+    }).catch(function(error){console.log(error)})
+    }
+    </script>
+    </body>
+    </html>

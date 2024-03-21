@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <h1 id="ab">hello world</h1>
+
+    <h1 class="a">Hello</h1>
+    <h2 class="a">Edupoly</h2>
+    <!-- <p class="b">Training</p> -->
+    <ul>
+        <li>Apple</li>
+        <li>Mango</li>
+        <li>Orange</li>
+     </ul>  
+     <!-- <h1>Hello</h1> -->
+        <p>Edupoly</p>
+        <p>Training</p>
+        <p>Something</p>
+     <table border="1px solid">
+        <thead>
+            <th>firstame</th>
+            <th>age</th>
+            <th>gender</th>
+            <th>city</th>
+            <th>salary</th>
+        </thead>
+        <tbody id="dd"></tbody>
+     </table>
+     <br>
+     <table border="1px solid">
+        <tr>
+            <th>firstame</th>
+            <th>lastname</th>
+            <th>age</th>
+            <th>gender</th>
+            <th>city</th>
+            <th>salary</th>
+            
+        </tr>
+        <tbody id="ad">
+        </tbody>
+        </table> -->
+        <br>
+        <table border="1px solid">
+            <tr>
+                <th>firstame</th>
+                <th>lastname</th>
+                <th>age</th>
+                <th>gender</th>
+                <th>city</th>
+                <th>salary</th>
+                
+            </tr>
+            <tbody id="male">
+            </tbody>
+        </table>
+        <table border="1px solid">
+            <tr>
+                <th>firstame</th>
+                <th>lastname</th>
+                <th>age</th>
+                <th>gender</th>
+                <th>city</th>
+                <th>salary</th>
+                
+            </tr>
+            <tbody id="female">
+            </tbody>
+        </table>
+            <!-- <table border="1px solid">
+                <tr>
+                    <th>firstame</th>
+                    <th>lastname</th>
+                    <th>age</th>
+                    <th>gender</th>
+                    <th>city</th>
+                    <th>salary</th>
+                    
+                </tr>
+                <tbody id="ed">
+                </tbody>-->
+    <script>
+          var arr=[]
+      /*   // a.Print the text inside the h1 element in the console.
+        var x = document.getElementById("ab")
+        console.log(x.innerHTML)
+        //b.Print the data type of the text inside the h1.
+        console.log(typeof (x))
+        //c.Print the text inside the h1 in uppercase in the console.
+        console.log(x.innerHTML.toUpperCase())
+        //c. Change the text of the h1 to "Welcome to Edupoly".
+        x.innerHTML = "welocome to edupoly" */
+       // console.log(x.innerHTML)
+
+
+        /*  //2. Print the texts inside the h1 and h2 elements in the console.
+           var x=document.getElementsByClassName("a")
+        for(i=0;i<=x.length-1;i++){
+            console.log(x[i].innerHTML)
+        } */
+
+        //3.Store the texts of each li element in an array.
+         var x=document.getElementsByTagName("li")
+        for(var i=0;i<=x.length-1;i++){
+            arr.push(x[i].innerHTML)
+        }
+        console.log(arr)  
+      /* //4. Print the text inside the first paragraph element in the console.
+
+       var x=document.getElementsByTagName("p")
+        console.log(x[1].innerHTML) */
+        
+        //5.Generate HTML Elements using document object
+
+        //5.1. Create one h1 element and put some text into it.
+
+      /*var x=document.createElement("h1")
+        x.innerHTML="Hello Dom world"
+        console.log(x.innerHTML) */
+        
+      //  5.2 Create one h1 element,put some text into it and apply red font color to it.
+
+               var x=document.createElement("h1")
+               x.innerHTML="Hello Dom world"
+               x.style.color='red'
+                
+               document.body.appendChild(x)
+        //5.3. Take an array of names and create a list from it.
+            names=["ramesh","suresh","praveen",'gopi',"sunil"]
+            var x=document.createElement('ul');
+                names.forEach(function(s,i){
+                    var y= document.createElement('li')
+                    y.innerHTML=s
+                    x.appendChild(y)
+                 
+                }) 
+                document.body.appendChild(x) ;
+
+               // 5.4 Take an array of numbers and create a list from it.
+              /*  var a=17
+                var x= document.createElement("ul")
+                for(var i=11;i<=a;i++){
+                    var y= document.createElement("li")
+                    y.innerHTML=i
+                    x.appendChild(y)
+                }
+                document.body.appendChild(x)
+                 //5.5 Take an array of objects and create a table form it.
+                 var people = [
+                        {
+                        firstname: "praveen",
+                        age: 36,
+                        gender: "male",
+                        city: "hyd",
+                        salary: 10000
+                        },
+                        {
+                        firstname: "srikanth",
+                        age: 32,
+                        gender: "male",
+                        city: "bengaluru",
+                        salary: 20000
+                        },
+                        {
+                        "firstname": "pradeep",
+                        "age": 21,
+                        "gender": "male",
+                        "city": "hyd",
+                        "salary": 25000
+                        },
+                        {
+                        "firstname": "mounika",
+                        "age": 20,
+                        "gender": "female",
+                        "city": "nalgonda",
+                        "salary": 30000
+                        },
+                        {
+                        "firstname": "nikhil",
+                        "age": 22,
+                        "gender": "male",
+                        "city": "guntur",
+                        "salary": 2000
+                        },
+                        {
+                        "firstname": "riya",
+                        "age": 14,
+                        "gender": "female",
+                        "city": "indore",
+                        "salary": 40000
+                        }
+                        ];
+                        var tab=document.getElementById("dd");
+                        gentable(people)
+                        function gentable(arr){
+                        tab.innerHTML=""
+                        arr.forEach(function(s,i){
+                        var tr1=document.createElement("tr");
+                        var td1=document.createElement("td");
+                        td1.innerHTML=s.firstname;
+                        tr1.appendChild(td1);
+                        var td3=document.createElement("td");
+                        td3.innerHTML=s.age;
+                        tr1.appendChild(td3);
+                        var td4=document.createElement("td");
+                        td4.innerHTML=s.gender;
+                        tr1.appendChild(td4);
+                        var td5=document.createElement("td");
+                        td5.innerHTML=s.city;
+                        tr1.appendChild(td5);
+                        var td6=document.createElement("td");
+                        td6.innerHTML=s.salary;
+                        tr1.appendChild(td6);
+                        tab.appendChild(tr1);
+                        });
+                    }*/
+                    //5.6Take an array of image urls and display the images in browser
+                    /*var ar=["https://cdn.pixabay.com/photo/2014/02/27/16/10/flowers-276014_640.jpg",
+                              "https://1.bp.blogspot.com/-kK7Fxm7U9o0/YN0bSIwSLvI/AAAAAAAACFk/aF4EI7XU_ashruTzTIpifBfNzb4thUivACLcBGAsYHQ/s1280/222.jpg",
+                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKRzHHirDMQU_v0RHsILVKVt2O2RzpYR_EA_wiH5XaZQiOO_SBqb_8clGzD2cNXMTFoB0&usqp=CAU"];
+                
+                    ar.forEach(function(s,i){
+                        var x=document.createElement("img")
+                        x.src=s;
+                        document.body.appendChild(x);
+                        x.style.wigth="100px";
+                        x.style.height="200px";
+                        x.style.margin="10px";
+                    }) 
+                         
+                    //6.Generate List Elements using document object for the given Array of Objects
+                    var students = [
+                                {
+                                name:'jaya',
+                                gender:'female',
+                                place:'gachibowli',
+                                },
+                                {
+                                name:'dasu',
+                                gender:'male',
+                                place:'kphb'
+                                },
+                                {
+                                name:'swati',
+                                gender:'female',
+                                place:'pune'
+                                },
+                                {
+                                name:'pallavi',
+                                gender:'female',
+                                place:'assam'
+                                },
+                                {
+                                name:'kiran',
+                                gender:'male',
+                                place:'kondapur'
+                                },
+                                {
+                                name:'thirumala',
+                                gender:'male',
+                                place:'madhapur'
+                                },
+                                {
+                                name:'priya',
+                                gender:'female',
+                                place:'hitech'
+                                },
+                            ]
+                            var x=document.createElement('ul');
+                     students.forEach(function(s,i){
+                    var li1= document.createElement('li')
+                    li1.innerHTML=s.name
+                    x.appendChild(li1);
+                    var y=document.createElement('ul');
+                    var li2= document.createElement('li')
+                    li2.innerHTML=s.gender
+                    y.appendChild(li2);
+                    var li3= document.createElement('li')
+                    li3.innerHTML=s.place
+                    y.appendChild(li3);
+                    
+                    if(s.gender=="female"){
+                        li1.style.background="green"
+                    }
+                    else{
+                        li1.style.background="red"
+                    }
+                    li1.appendChild(y);
+                });
+                document.body.appendChild(x);
+                x.style.border="5px solid red"
+
+    //7.Display the above data like the following image using Javascript DOM Element creation and append
+    var students = [		
+                                    {
+                                        "firstname": "praveen",
+                                        "age": 36,
+                                        "subjects":['angular','nodejs','reactjs','java']
+                                    }, 
+                                    {
+                                        "firstname": "srikanth",
+                                        "age": 32,
+                                        "subjects":['react','mongodb']
+                                    }, 
+                                    {
+                                        "firstname": "pradeep",
+                                        "age": 21,
+                                        "subjects":['express','mongoose','python']
+                                    }
+                            ];
+                            var x=document.createElement('ol');
+                students.forEach(function(s,i){
+                    var li1= document.createElement('li')
+                    li1.innerHTML=s.firstname
+                    x.appendChild(li1);
+                    var ol1=document.createElement("ol")
+                s["subjects"].forEach(function(s,i)
+                    {
+                    var li3= document.createElement('li')
+                    li3.innerHTML=s
+                    ol1.appendChild(li3); 
+                  })
+                  x.appendChild(ol1);
+                });
+                document.body.appendChild(x);*/
+                //8.Generate UI using document object for the given Array of Objects
+                var people = [
+                        {
+                        "firstname": "praveen",
+                        "lastname": "gubbala",
+                        "age": 36,
+                        "gender": "male",
+                        "city": "hyd",
+                        "salary": 10000
+                        },
+                        {
+                        "firstname": "srikanth",
+                        "lastname": "gubbala",
+                        "age": 32,
+                        "gender": "male",
+                        "city": "bengaluru",
+                        "salary": 20000
+                        },
+                        {
+                        "firstname": "pradeep",
+                        "lastname": "reddy",
+                        "age": 21,
+                        "gender": "male",
+                        "city": "hyd",
+                        "salary": 25000
+                        },
+                        {
+                        "firstname": "mounika",
+                        "lastname": "mudiraj",
+                        "age": 20,
+                        "gender": "female",
+                        "city": "nalgonda",
+                        "salary": 30000
+                        },
+                        {
+                        "firstname": "nikhil",
+                        "lastname": "m",
+                        "age": 22,
+                        "gender": "male",
+                        "city": "guntur",
+                        "salary": 2000
+                        },
+                        {
+                        "firstname": "riya",
+                        "lastname": "bhadouria",
+                        "age": 14,
+                      "gender": "female",
+                        "city": "indore",
+                        "salary": 40000
+                        }
+                        ];
+                        var tabMale = document.getElementById("male");
+                        var tabFemale = document.getElementById("female");
+
+gentable(people);
+
+function gentable(arr) {
+  tabMale.innerHTML = ""; 
+  tabFemale.innerHTML = ""; 
+
+  arr.forEach(function(s) {
+    var tr1 = document.createElement("tr");
+    var tr2 = document.createElement("tr");
+
+    var td1 = document.createElement("td");
+    td1.innerHTML = s.firstname;
+    tr1.appendChild(td1);
+    tr2.appendChild(td1);
+
+    var td2 = document.createElement("td");
+    td2.innerHTML = s.lastname;
+    tr1.appendChild(td2);
+    tr2.appendChild(td2);
+
+    var td3 = document.createElement("td");
+    td3.innerHTML = s.age;
+    tr1.appendChild(td3);
+    tr2.appendChild(td3);
+
+    var td4 = document.createElement("td");
+    var td7 = document.createElement("td");
+
+   /* if (s["gender"] == "male") {
+      td7.innerHTML = s.gender;
+      tr1.appendChild(td7);
+      tabMale.appendChild(tr1)
+    }*/
+     if (s["gender"] == "female") {
+      td4.innerHTML = s.gender;
+         tr2.appendChild(td4);
+         tabFemale.appendChild(tr2)
+    }
+
+    var td5 = document.createElement("td");
+    td5.innerHTML = s.city;
+    tr1.appendChild(td5);
+    tr2.appendChild(td5);
+
+    var td6 = document.createElement("td");
+    td6.innerHTML = s.salary;
+    tr1.appendChild(td6);
+    tr2.appendChild(td6);
+});
+}
+                        //8.1Display all the people's data in a table.
+                      /* var tab=document.getElementById("ad");
+                        gentable(people)
+                        function gentable(arr){
+                        tab.innerHTML=""
+                        arr.forEach(function(s,i){
+                        var tr1=document.createElement("tr");
+                        var td1=document.createElement("td");
+                        td1.innerHTML=s.firstname;
+                        tr1.appendChild(td1);
+                        var td2=document.createElement("td");
+                        td2.innerHTML=s.lastname;
+                        tr1.appendChild(td2);
+                        var td3=document.createElement("td");
+                        td3.innerHTML=s.age;
+                        tr1.appendChild(td3);
+                        var td4=document.createElement("td");
+                        td4.innerHTML=s.gender;
+                        tr1.appendChild(td4);
+                        var td5=document.createElement("td");
+                        td5.innerHTML=s.city;
+                        tr1.appendChild(td5);
+                        var td6=document.createElement("td");
+                        td6.innerHTML=s.salary;
+                        tr1.appendChild(td6);
+                        tab.appendChild(tr1);
+                        });
+                    }*/
+                    //8.2Display all male and female people in two separate tables. 
+                    /*var tab=document.getElementById("male");
+                    var h=document.getElementById("female");
+                        gentable(people)
+                        function gentable(arr){
+                        tab.innerHTML=""
+                        h.innerHTML=""
+                        arr.forEach(function(s,i){
+                        var tr1=document.createElement("tr");
+                        var tr2=document.createElement("tr");
+                        var td1=document.createElement("td");
+                        td1.innerHTML=s.firstname;
+                        tr2.appendChild(td1);
+                        h.appendChild(td1);
+                        var td2=document.createElement("td");
+                        td2.innerHTML=s.lastname;
+                        tr1.appendChild(td2);
+                       tr2.appendChild(td2);
+                        var td3=document.createElement("td");
+                        td3.innerHTML=s.age;
+                        tr1.appendChild(td3);
+                        tr2.appendChild(td3);
+                       var td4=document.createElement("td");
+                       var td8=document.createElement("td");
+                        if(s["gender"]=="male"){
+                            td4.innerHTML=s.gender;
+                        }
+                        else{
+                            if(s["gender"]=="female"){
+                            td8.innerHTML=s.gender;
+                        }
+                        }
+                        tr1.appendChild(td4);
+                        tr2.appendChild(td8);
+                        var td5=document.createElement("td");
+                        td5.innerHTML=s.city;
+                        tr1.appendChild(td5);
+                        tr2.appendChild(td5);
+                        var td6=document.createElement("td");
+                        td6.innerHTML=s.salary;
+                        tr1.appendChild(td6);
+                        tr2.appendChild(td6);
+                        tab.appendChild(tr1);
+                        h.appendChild(tr2);
+                        });   
+                    } /*
+                    //8.2b female 
+                    /*var tab=document.getElementById("ed");
+                        gentable(people)
+                        function gentable(arr){
+                        tab.innerHTML=""
+                        arr.forEach(function(s,i){
+                        var tr1=document.createElement("tr");
+                        var td1=document.createElement("td");
+                        td1.innerHTML=s.firstname;
+                        tr1.appendChild(td1);
+                        var td2=document.createElement("td");
+                        td2.innerHTML=s.lastname;
+                        tr1.appendChild(td2);
+                        var td3=document.createElement("td");
+                        td3.innerHTML=s.age;
+                        tr1.appendChild(td3);
+                        var td4=document.createElement("td");
+                        td4.innerHTML=s.gender;
+                        tr1.appendChild(td4);
+                        var td5=document.createElement("td");
+                        td5.innerHTML=s.city;
+                        tr1.appendChild(td5);
+                        var td6=document.createElement("td");
+                        td6.innerHTML=s.salary;
+                        tr1.appendChild(td6);
+                        tab.appendChild(tr1);
+                        });   
+                    }  */
+    </script>
+</body>
+
+</html>

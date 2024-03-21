@@ -1,0 +1,94 @@
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <form onsubmit="event.preventDefault()">
+        <input type="text"  id="d">
+        </form>
+        <button onclick="submit()">add</button>
+        
+        <script>
+            var x=document.getElementById("d")
+            var p1=document.createElement("p");
+            
+            var ar=[]
+            function submit(e){
+                p1.innerHTML=''
+                ar.push(x.value)
+                ar.forEach(function(j,i){
+                    var s=document.createElement("span");
+                    s.innerHTML=j;
+                    p1.appendChild(s)
+            })
+            }
+           document.body.appendChild(p1)
+        </script>
+    </body>
+</html> -->
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>  
+</head>
+<body>
+    <input type="text" onkeyup="xyz()" id="kl">
+    <button onclick="acen()">ascending</button>
+    <button onclick="dec()">descending</button>
+    <table id="gh" border="1px">
+        <thead>
+            <tr>
+                <td>title</td>
+                <td>body</td>
+            </tr>
+        </thead>
+        <tbody id="tb">
+        </tbody>
+    </table>
+    <button onclick="mycountry()">click</button>
+    <script>
+        var tb1 = document.getElementById("tb");
+        var x = [];
+
+        function mycountry() {
+            axios.get("https://jsonplaceholder.typicode.com/posts").then(function(response) {
+                x = response.data; 
+                console.log(x);
+                gentable(x);
+            });
+        }
+
+        function gentable(arr) {
+            tb1.innerHTML = "";
+            arr.forEach(function(p) {
+                var tr1 = document.createElement("tr");
+                var td1 = document.createElement("td");
+                var td2 = document.createElement("td");
+                td1.innerHTML = p.title;
+                tr1.appendChild(td1);
+                td2.innerHTML = p.body;
+                tr1.appendChild(td2);
+                tb1.appendChild(tr1);
+            });
+        }
+        </script>
+    </body>
+</html> -->
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            var ar=[1,2,3,4];
+            console.log(ar)
+        </script>
+    </body>
+</html>
+<!-- <script>
+    var zr=[10,20,30,50];
+   var br= zr.map(function(s){
+       return s;
+    })
+    console.log(br);
+</script> -->

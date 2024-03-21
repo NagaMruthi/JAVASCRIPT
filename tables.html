@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>tables</title>
+    </head>
+    <body>
+            person
+        <input type="text" id="km" placeholder="NAME">
+            age
+        <input type="text" id="kl" placeholder="AGE">
+        <input type="text" id="ol" placeholder="salary">
+        <button onclick="my()">add preson</button>
+        <table  border="1px solid black">
+                <tr>
+                <th onclick="fd()">name</th>
+                <th onclick="ed()">age</th>
+                <th>salary</th>
+            </tr>
+            <tbody id="kr"></tbody>
+        </table>
+        <script>
+            var pName=document.getElementById('km')
+            var pAge=document.getElementById('kl')
+            var psalary=document.getElementById("ol")
+            var tab=document.getElementById('kr')
+            var people=[];
+                function my(){
+                    var obj={
+                   personName:pName.value,
+                   personAge:pAge.value,
+                   personsalary:psalary.value
+                }
+                people.push(obj);
+                gentable(people);
+                console.log(gentable)
+            }
+                function gentable(arr){
+                    tab.innerHTML="";
+                    arr.forEach(function(p){
+                    tr1=document.createElement('tr');
+                    td1=document.createElement('td');
+                    td2=document.createElement('td');
+                    td3=document.createElement("td");
+                    td1.innerHTML=p.personName;
+                    td2.innerHTML=p.personAge;
+                    td3.innerHTML=p.personsalary;
+                    tr1.appendChild(td1);
+                    tr1.appendChild(td2);
+                    tr1.appendChild(td3);
+                    tab.appendChild(tr1);
+                    });
+            }   
+          function fd(){
+                        people.sort(function(a,b){
+                            if(a.personName>b.personName){
+                                return 1;
+                            }
+                            if(a.personName<b.personName){
+                                return -1;
+                            } 
+                            return 0;
+                        });
+                        gentable(people);
+                    }
+                    function ed(){
+                      people.sort(function(a,b){
+                            if(a.personAge>b.personAge){
+                                return 1;
+                            }
+                            if(a.personAge<b.personAge){
+                                return -1;
+                            }
+                            return 0;
+                        });
+                        gentable(people);
+                    }
+        </script>
+    </body>
+</html>

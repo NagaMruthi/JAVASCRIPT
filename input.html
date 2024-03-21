@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        
+        <input type="name" placeholder="enter frist name" id="kl">
+        <br></br>
+        <input type="name" placeholder="enter last name"  id="lk">
+        <br></br>
+        <button onclick="abc()">submit</button>
+        <br></br>
+        <div><ul id="jk">
+        </ul></div>
+        <script>
+            function abc(){
+                alert("hi")
+                var u1=document.getElementById("jk")
+                var l1=document.getElementById("kl").value;
+                var l2=document.getElementById("lk").value;
+                var l3=document.createElement("li");
+                var l4=document.createElement("li");
+                l3.innerHTML=l1
+                l4.innerHTML=l2;
+                u1.appendChild(l3);
+                u1.appendChild(l4)
+                
+            }
+        </script>
+    </body>
+</html>

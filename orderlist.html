@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <input type="text" id="km">
+        <button onclick="add()">add</button>
+        <ul id="kl">
+        
+        </ul>
+        <script>
+            var res=document.getElementById('km');
+            var tl=document.getElementById('kl');
+            var tasks=[];
+            function add(){
+                tl.innerHTML='';
+                tasks.push(res.value);
+                genlist(tasks);
+            
+             function genlist(arr){
+                tasks.forEach(function(p){
+                    var li1=document.createElement('li');
+                    li1.innerHTML=p;
+                    tl.appendChild(li1);
+                });
+            }
+        }
+        </script>
+    </body>
+</html>

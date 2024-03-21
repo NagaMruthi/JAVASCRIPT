@@ -1,0 +1,62 @@
+<html>
+    <head><script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+        <body>
+            <div style="text-align: center;">
+                <h1>Select A Iteam</h1>
+            <input type="text" id="search" placeholder="select the food" onkeyup="abc()"></div>
+            <div id="main" class="d-flex flex-wrap"></div>
+            <script>
+                var main=document.getElementById("main")
+                var z=[]
+                  var url="https://www.themealdb.com/api/json/v1/"
+                var   word="categories.php"
+                 axios.get(`${url}/${word}`)
+                 .then((res)=>{
+                    console.log(res.data)
+                    z=res.data.categories
+                    genUI(z)
+                 })
+                function abc(){
+                    var search=document.getElementById('search').value;
+                    var x=z.filter(function(a){
+                        return(a.strCategory.startsWith(search))
+                    })
+                    console.log(x)
+                    genUI(x)
+                }
+                    function genUI(categorie){
+                    categorie.forEach(function(food){
+                        main.innerHTML="";
+                        var card=document.createElement("div")
+                        card.setAttribute("class", "card  border border-primary m-3" )
+                        card.style.width="300px"
+                        var cardbody=document.createElement("div")
+                        cardbody.setAttribute("class","card-body")
+
+                        var pic=document.createElement("img")
+                        pic.src=food.strCategoryThumb
+                        pic.style.width="250px"
+                        pic.style.height="250px"
+
+                        var category=document.createElement("span")
+                        category.innerHTML=food.strCategory
+                        category.setAttribute("class","badge bg-secondary")
+
+                        var Description=document.createElement("p")
+                        Description.innerHTML=food.strCategoryDescription
+
+                        cardbody.appendChild(pic)
+                        cardbody.appendChild(category)
+                        cardbody.appendChild(Description)
+                        card.appendChild(cardbody)
+                        main.appendChild(card)                                                             
+              })
+        }
+        
+            </script>
+        </body>
+    </head>
+</html>

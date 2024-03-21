@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+          /* var person ={
+                                "firstName" : "Harry",
+                                "lastName" : "Potter",
+                                "age": 30,
+                                "gender": "male",
+                                "skill" : "ReactJS",                                
+                                "expertise": "Beginner"
+                            };
+                            //1.print first name.
+                            console.log(person["firstName"]);
+                            //2.print the lastname.
+                            console.log(person["lastName"]);
+                            //3Print the fullname("Harry Potter").
+                            console.log(person["firstName"]+person["lastName"]);
+                            //4.If the age is less than 18, then print "false". If the age is more than 18, then print "true".
+                            if(person["age"]>18){
+                                console.log("true");
+                            } 
+                            else{
+                                console.log("false");
+                            }*/
+       //2.For the given marks object solve the following
+        var marks = {
+                                "maths" : 34,
+                                "english" : 56,
+                                "science": 32,
+                                "hindi" : 75,
+                                "social science": 65
+                            };
+                           /* //1. Print the marks of all the subjects
+                            for(var x in marks){
+                                console.log(marks[x]);
+                            }              
+                            //2.print the names of all the subject form the given object.
+                            for (var x in marks){
+                                console.log(x);
+
+                            }*/
+                           //3.Count the number of subjects from the given object.
+                           for (var x in marks){
+                                console.log(x.length);
+
+                            }
+                            // console.log(mark.length)
+                           /*//4.Print the percentage of the marks of the student
+                            var sum=0;
+                            for(var x in marks){
+                                sum+=marks[x]
+                            }
+                            console.log(sum);
+                            var percentage=(sum/(100*5))*100
+                            console.log(percentage);
+                           /* //5.Print only those subjects where the student scored more than 35.
+                            for(var x in marks)
+                            {
+                                if(marks[x]>35){
+                                    console.log(marks[x]);
+                                }
+                            }
+                            //6.Print the pass/fail status of the subjects provided 35 is the pass mark.
+                            for(var x in marks)
+                            {
+                                if(marks[x]>35){
+                                    console.log("pass");
+                                }
+                                else{
+                                    console.log("fail");
+                                }
+                            }
+                            //7.Print only the passed subjects
+                            for(var x in marks){
+                                if(marks[x]>35){
+                                    console.log(x);
+                                }
+                            }*/
+                            /*//8.Count the number of passed subjects.
+                            var count=0;
+                            for(var x in marks){
+                                if(marks[x]>35){
+                                    count++;
+                                }
+                            }
+                            console.log(count);
+                            //9.Print only the failed subjects.
+                           /* for(var x in marks)
+                            {
+                                if(marks[x]<35){
+                                    console.log("pass");
+                                }
+                                else{
+                                    console.log("fail")
+                                }
+                            }
+                            //10.count the number of fail subjects. var count=[0];
+                            var count=0;
+                            for(var x in marks){
+                                if(marks[x]<35){
+                                    count++;
+                                }
+                            }
+                            console.log(count);*/
+                           //11.Print the least scored subject
+                            // var min=Infinity;
+                            // var b;
+                            // for (var i in marks){
+                            //     if(min>=marks[i])
+                            //     {
+                            //     min=marks[i];
+                            //     b=i;
+                            //     }
+                            // }
+                            // console.log(min)
+                            // console.log(b)
+                            // //12.print the least scored subject
+                            // var max=-Infinity;
+                            // var s;
+                            
+                            // for(var x in marks){
+                            //     if(max<marks[x]){
+                            //         max=marks[x];
+                            //         s=x;
+                                    
+                            //     }
+                            // }
+                            // console.log(marks.length)
+                            // console.log(max);
+                            // console.log(s);
+                            //13.Check whether th 
+                             {
+                                return (s.type==="Software")
+                             })
+                            console.log(v);
+                            //4.Print all the categories.
+                            for(var i=0;i<=products.length-1;i++){
+                                console.log(products[i].category);
+                            } 
+                            //5.Print only the products manufactured by Duracell.
+                            var v=products.filter(function(s,i)
+                             {
+                                return (s.manufacturer==="Duracell")
+                             })
+                             console.log(v);
+                             //6.rint the product names in ascending order of their p
+                             var b=products.sort(function(a,b){
+                                if(a>b.price){
+                                    return -1;
+                                }
+                                else{
+                                    return 1;
+                                }
+                                return 0;
+                             }) 
+                             console.log(b);
+                             //7.Print only those products whose price is more than 14.99.
+                             var res=products.filter(function(s,i){
+                                return (s.price>14.99);
+                             })
+                             console.log(res);
+                             //8.Print only those products whose price is less than 9.99.
+                             var res=products.filter(function(s,i){
+                                return (s.price<9.99);
+                             })
+                             console.log(res);
+                             //9.Print the total price of all the hardgoods.
+                             var v=products.filter(function(s,i)
+                             {
+                                return (s.type==="HardGood")
+                             });
+                             var a=v.reduce(function(a,b){
+                                return(a+b.price)
+
+                             },0);
+                             console.log(a);
+
+                             //10.Print the average price of the softwares.
+                             var v=products.filter(function(s,i)
+                             {
+                                return (s.type==="HardGood")
+                             });
+                             var a=v.reduce(function(a,b){
+                                return(a+b.price/v.length)
+
+                             },0);
+                             console.log(a);*/
+        var ar = [
+                            {
+                            "firstname": "praveen",
+                            "lastname": "gubbala",
+                            "age": 36,
+                            "gender": "male",
+                            "city": "hyd",
+                            "salary": 10000
+                            },
+                            {
+                            "firstname": "srikanth",
+                            "lastname": "gubbala",
+                            "age": 32,
+                            "gender": "male",
+                            "city": "bengaluru",
+                            "salary": 20000
+                            },
+                            {
+                            "firstname": "pradeep",
+                            "lastname": "reddy",
+                            "age": 21,
+                            "gender": "male",
+                            "city": "hyd",
+                            "salary": 25000
+                            },
+                            {
+                            "firstname": "mounika",
+                            "lastname": "mudiraj",
+                            "age": 20,
+                            "gender": "female",
+                            "city": "nalgonda",
+                            "salary": 30000
+                            },
+                            {
+                            "firstname": "nikhil",
+                            "lastname": "m",
+                            "age": 22,
+                            "gender": "male",
+                            "city": "guntur",
+                            "salary": 2000
+                            },
+                            {
+                            "firstname": "riya",
+                            "lastname": "bhadouria",
+                            "age": 14,
+                            "gender": "female",
+                            "city": "indore",
+                            "salary": 40000
+                            }
+                            ];
+//1.Print all the firstnames.
+/*for(var x in ar){
+    console.log(ar[x].firstname);
+}
+//2.print all the lastname
+for(var x in ar){
+    console.log(ar[x].lastname);
+}
+//3.Print all the full names.
+for(var x in ar){
+    console.log(ar[x].firstname+ar[x].lastname)
+}//4.Print only those names whose age is more than 25.
+for(var x in ar){
+    if(ar[x].age>25){
+        console.log(ar[x].firstname);
+    }
+}
+//5.Print all female names.
+ar.forEach(function(s,i){
+    if(s.gender==="female")
+    {
+        console.log(s.firstname);
+    }
+})
+//6.Print only those names whose salary is more than 25000 and increase their salaries by 15%.
+var a=ar.filter(function(s,i){
+        return (s.salary>25000)
+});
+var b=a.map(function(s,i){
+    return(s.salary*(15+100)/100)
+})
+console.log(b);
+/*var res=a.reduce(function(a,b){
+    return (a.salary)
+},0);
+console.log(res);*/
+
+/*//7.Using prompt, print only those names whose city is "hyd".
+ar.forEach(function(s,i){
+    if(s.city==="hyd")
+        console.log(s);
+})
+//8.Print the total salary of all the people.
+var a=ar.reduce(function(a,b){
+    return(a+b.salary)
+        
+},0);
+console.log(a);
+//9.Print all the fullnames in the alphabetical order.
+var res=ar.sort(0function(a,b){
+    if(a.firstname+a.lastname>b.firstname+a.lastname){
+        return 1;
+    }
+    else{
+        return -1;
+    }
+},0)
+console.log(res);*/
+/*//.11Print all the fullnames in the increasing order of their age.
+var y=ar.sort(function(a,b){
+    if(a.age>b.age){
+        return 1;
+    }
+    return -1;
+})
+console.log(y);*/
+//11.Print all the fullnames in the reverse alphabetical order.
+var res=ar.sort(function(a,b){
+    if(a.firstname+a.lastname>b.firstname+a.lastname){
+        return -1;
+    }
+    else{
+        return 1;
+    }
+},0)
+console.log(res);
+/*//12.Print all the fullnames in the decreasing order of their salaries.
+var res=ar.sort(function(a,b){
+    if(a.salary>b.salary){
+        return -1;
+    }
+    else{
+        return 1;1
+    }
+},0)
+console.log(res);*/
+//13.Print all the cities in which the people live. There should not be any duplicate cities.
+/*var br=ar.map(function(s,i){
+    return (!br.includes(s.city))
+        br.push(s.city);
+})
+
+console.log(br);
+
+var br=[];
+for(var i=0;i<=ar.length-1;i++){
+    if(!br.includes(ar[i].city)){
+        br.push(ar[i].city)
+    }
+}
+console.log(br);*/
+//14.Print all the male names whose age is greater than 25
+/*var a=ar.filter(function(s,i){
+    return (s.gender==="male" && s.age>25)
+
+})
+console.log(a);
+//15.Print all names that starts with "p" and the firstname should be in UPPERCASE. e.g. PRAVEEN gubbala.
+var x=ar.filter(function(s,i){
+    return(s.firstname.startsWith("p"))
+})
+x.forEach(function(s,i){
+    console.log(s.firstname.toUpperCase()+" "+ s.lastname)
+})
+/*
+    if(!br.includes(ar[i].firstname.toUpperCase())){
+        br.push(ar[i].firstname.toUpperCase())
+    }
+}
+console.log(br);*/
+/*var ar=[1,2,3,2];
+var br=[];
+for(var i=0;i<ar.length-1;i++){
+    if(!br.includes(ar[i])){
+        br.push(ar[i])
+    }
+}
+console.log(br);*/
+    </script>                 
+    </body>
+</body>

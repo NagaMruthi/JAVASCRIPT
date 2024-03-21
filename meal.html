@@ -1,0 +1,68 @@
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Meals
+        </title>
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    </head>
+    <body>
+        <div>
+        <input type="text" id="ui">
+        <button onclick="my()">show</button>
+        </div>
+        <div id="kl">
+        </div>
+        <script>
+            var div1=document.getElementById("kl")
+             var ip=document.getElementById("ui").value;
+                var str2=ip;
+            function my(){
+               
+            var str1="https://www.themealdb.com/api/json/v1/1/search.php?s"
+            axios.get(`${str1}=${str2}`).then((r)=>{
+                console.log(r.data.meals)
+                var z=r.data.meals;
+                gencard(z);
+            })
+        }
+        function gencard(arr){
+            arr.forEach((r)=>{
+                var maindiv=document.createElement("div");
+                maindiv.setAttribute("class","card");
+                var pic=document.createElement("img");
+                pic.setAttribute("class","card-img-top");
+                pic.style.width="200px"
+                pic.src=r.strMealThumb;
+                maindiv.appendChild(pic);
+                div1.appendChild(maindiv)
+                var seconddiv=document.createElement("div");
+                seconddiv.setAttribute("class","card-body");
+                var ol1=document.createElement("ol");
+                for(var i=0;i<=20;i++){
+                    var ing="strIngredient"+i;
+                    var ingmeasure="strMeasure"+i;
+                if(r[ing].
+                length>1){
+                var li1=document.createElement("li");
+                li1.innerHTML=r[ing]+" : "+r[ingmeasure]
+                ol1.appendChild(li1);
+                
+                }
+                seconddiv.appendChild(ol);
+                maindiv.appendChild(seconddiv)
+            }
+                
+            })
+        }
+        </script>
+    </body>
+</html> -->
+<script>
+    var ar=[2,65];
+    var br=ar.map(function(s){
+        console.log(s)
+    })
+    console.log(br)
+</script>

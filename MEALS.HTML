@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    </head>
+    <body>
+        <div id="dm1" class="d-flex flex-wrap justify-content-center mb-5"></div>
+        <div class="d-flex flex-wrap justify-content-evenly">
+            <div id="dm2"></div>
+            <div id="dm3"></div>
+        </div>
+        <script>
+            var dm1 = document.getElementById('dm1')
+            var dm2 = document.getElementById('dm2')
+            var dm3 = document.getElementById('dm3')
+            var categories
+            axios.get("https://www.themealdb.com/api/json/v1/1/list.php?c=list").then((res)=>{
+                console.log(res.data.meals)
+                categories = res.data.meals
+                categories.forEach((s,i)=>{
+                    var sp1 = document.createElement('span')
+                    sp1.setAttribute('class','badge bg-secondary-subtle text-dark m-1')
+                    sp1.id=i
+                    sp1.onclick=()=>{showList(i)}
+                    sp1.innerHTML=s.strCategory
+                    dm1.appendChild(sp1)
+                })
+            })
+            function showList(i){
+                dm2.innerHTML="";
+                dm3.innerHTML="";
+                for(var rs=0;rs<=categories.length-1;rs++){
+                    var rsElement = document.getElementById(rs);
+                    rsElement.removeAttribute('class');
+                    rsElement.setAttribute('class','badge bg-secondary-subtle text-dark m-1')
+                }
+                var x = document.getElementById(i);
+                console.log(i);
+                x.removeAttribute('class');
+                x.setAttribute('class','badge bg-dark text-white m-1');
+                var url2 = "https://www.themealdb.com/api/json/v1/1/filter.php?c"
+                var categ = x.innerHTML
+                console.log(categ)
+                axios.get(`${url2}=${categ}`).then((resp)=>{
+                    var lists = resp.data.meals
+                    console.log(lists)
+                    var ul1 = document.createElement('ul')
+                    lists.forEach((l)=>{
+                        var li1 = document.createElement('li')
+                        li1.setAttribute('class','border border-5')
+                        li1.style.listStyle="none"
+                        li1.innerHTML=l.strMeal
+                        li1.onclick=()=>{genCard(l.strMeal)}
+                        ul1.appendChild(li1)
+                    })
+                    dm2.appendChild(ul1)
+                })
+            }
+            function genCard(hg){
+                dm3.innerHTML=""
+                var url3 = "https://www.themealdb.com/api/json/v1/1/search.php?s"
+                axios.get(`${url3}=${hg}`).then((r)=>{
+                    var meal = r.data.meals
+                    console.log(meal)
+                    meal.forEach((sr)=>{
+                        var card = document.createElement('div')
+                        card.setAttribute('class','border w-25 m-3 p-4 bg-black rounded-1 text-white')
+                        var cardBody = document.createElement('div')
+
+                        var pic = document.createElement('img')
+                        pic.src=sr.strMealThumb
+                        pic.setAttribute('class','w-100 mb-2 rounded-5')
+
+                        var nm = document.createElement('h5')
+                        nm.setAttribute('class','text-center')
+                        nm.innerHTML=sr.strMeal
+
+                        var category = document.createElement('span')
+                        category.innerHTML=sr.strCategory
+                        category.setAttribute('class','badge bg-warning')
+
+                        var area = document.createElement('span')
+                        area.innerHTML=sr.strArea
+                        area.setAttribute('class','badge bg-success')
+
+                        var ingredients = document.createElement('ol')
+                        for(var i=1;i<=20;i++){
+                            var ing="strIngredient"+i
+                            var ingMes="strMeasure"+i
+                            if(sr[ing].length>1){
+                                var ingredient = document.createElement('li')
+                                ingredient.innerHTML = sr[ing]+": "+sr[ingMes]
+                                ingredients.appendChild(ingredient)
+                            }
+                        }
+                        card.appendChild(pic)
+                        cardBody.appendChild(nm)
+                        cardBody.appendChild(category)
+                        cardBody.appendChild(area)
+                        cardBody.appendChild(ingredients)
+                        card.appendChild(cardBody)
+                        dm3.appendChild(card)
+                    })
+                })
+            }
+        </script>
+    </body>
+</html>

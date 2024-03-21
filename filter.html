@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <script>
+           /* //2.print all numbers in an array except the first element. Expected output: 34 54 0 4 7
+           var ar=[23,34,54,0,4,7];
+            var a=ar.filter(function(s,i){
+                return (i!==0)
+            })
+            console.log(a);
+          //3.Print all elements in an array except the last element Expected output: 23 34 54 0 4
+            var ar=[23,34,54,0,4,7];
+            var a=ar.filter(function(s,i){
+                return (i<=ar.length-2);
+            })
+            console.log(a);
+           //5.Print only the last 4 elements of an array. Expected output: 54 0 4 7
+            var ar=[23,34,54,0,4,7];
+            var res=ar.filter(function(s,i){
+                return (i>=ar.length-4);
+            })
+            console.log(res);
+            //6.For the Given array: [23,34,54,10,4,7] print values that are greater than the given number. Given number: 20, Expected output: 23,34,54
+            var ar=[23,34,54,0,4,7];
+            var a=ar.filter(function(s,i){
+                return(s>20);
+            })
+            console.log(a);
+           //7.For the Given array: [23,34,54,10,4,7] print all the even numbers in an Array. Expected output: 34,54,10,4
+            var ar=[23,34,54,0,4,7];
+            var res=ar.filter(function(s){
+                return (s%2==0);
+            })
+            console.log(res);
+            //8.For the Given array: [23,34,54,10,4,7] print all the odd numbers in an Array. Expected output: 23,7
+            var ar=[23,34,54,0,4,7];
+            var a=ar.filter(function(s,i){
+                return (s%2===1);
+            })
+            console.log(a);
+           //9.For the Given array: [23,-34,-54,10,-4,7] print all the positive numbers in an array. Expected output: 23,10,7
+            var ar=[23,-34,-54,10,-4,7]
+            var a=ar.filter(function(s,i){
+                return (s>=0)
+            })
+            console.log(a)
+           //10.Print only the 2 digit numbers from an array
+            var ar=[23,34,54,0,4,7,99];
+            var a=ar.filter(function(s,i){
+                return (10<=s && 99>=s);
+            })
+            console.log(a);
+            //11.Print only multiples of 5 from an array
+            var ar=[23,34,50,0,4,7,99];
+            var a= ar.filter(function(s,i){
+                return (s%5==0)
+            })
+            console.log(a);
+            //12.Print only multiples of 2 And 3 from an array
+            var ar=[23,34,50,0,4,7,99,9,56,452,7964,42,78,712];
+            var a=ar.filter(function(s,i){
+                return (s%2==0 && s%3==0);
+            })
+            console.log(a);
+            //13.Print only multiples of 2 AND 3 from an array
+            var ar=[23,34,50,0,4,7,99,9,56,452,7964,42,78,712];
+            var a=ar.filter(function(s,i){
+                return (s%3==0 || s%5==0)
+            })
+            console.log(a)*/
+           //level
+           /*//5.For the Given array: [23,34,54,10,4,7] search if the given number is there in an array or not. Given number: 34, Expected output: true Given number: 26, Expected output: false
+           var ar=[1,2,3,4,2,6];
+           var x=2;
+           var res= ar.filter(function(s,i){
+            return (s==x)
+           })
+           if(res.length>0){
+            console.log("true")
+           }
+           else{
+            console.log("false")
+           }
+           console.log(res);
+           //6.count
+           var ar=[85,468,412,8951,1,14,12,1378];
+           var x=+prompt();
+           var res= ar.filter(function(s,i){
+            return (s==x);
+           })
+           console.log(res.length);
+           //7.index
+           var ar=[23,34,54,10,34,7]
+           var x=+prompt();
+           var res=ar.filter(function(s,i){
+            if(s==x){
+                return i;
+            }
+           })
+           console.log(res);*/
+           //8.
+          /* //9.Sort an array in ascending order. Given array: [23,34,54,10,4,7] Expected output: 4,7,10,23,34,54
+           var ar=[23,34,54,10,4,7];
+           var a=ar.sort(function(a,b){
+            if(a>b){
+                return 1;
+            }
+            else{
+                return -1;
+            }
+           })
+           console.log(a);*/
+           /*//10.Store only even numbers of a given array in another array.
+           var ar=[4,3,7,8,9,16,7,14,18]
+           var res=ar.filter(function(s){
+            return (s%2===0);
+           })
+           console.log(res);*/
+           //11.
+           var ar=[23,3,2,23,5];
+           var res=ar.filter(function(s,i){
+            if(s!==ar){
+                console.log(ar);
+            }
+           })
+        </script>
+    </body>
+</html>\

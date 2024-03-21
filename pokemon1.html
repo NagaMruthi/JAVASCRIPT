@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <style>
+        .card{
+            align-content: center;
+        }
+        /* .card-img-top{
+            width: 200px;
+        } */
+        .card-text{
+
+            margin: auto;
+            text-align: center;
+        }
+        </style>
+</head>
+<body>
+<div id="op">
+    <input type="number" id="ip">
+    <button onclick="sub()">CREATE</button>
+</div>
+<div id="d1">
+
+</div>
+    <script>
+        function sub(){ 
+        var maindiv=document.getElementById("d1")
+        maindiv.style.width="18rem;"
+        var str3 = document.getElementById("ip").value;
+        if (str3>=1 && str3<=500){
+            var z=str3;
+        }
+        else{
+            alert("enter a valid input 1 to 500")
+    }
+            maindiv.innerHTML="";
+            var str1 = "https://pokeapi.co/api/v2";
+            var str2 = "pokemon";
+            
+            axios.get(`${str1}/${str2}/${z}`)
+                .then(function (response) {
+                    console.log(response.data)
+                    var result = response.data
+                    var d1=document.createElement("div") 
+                    d1.style.backgroundColor="red"
+                    d1.style.width="fit-content"
+                    d1.style.border="1px solid black"
+                    var im=document.createElement("img") 
+                    im.style.border="1px solid"                                       
+                    var d2=document.createElement("div")
+                    var h51=document.createElement("h5")
+                    h51.style.textAlign="center"
+                    var p1=document.createElement("p")    
+                    var p2=document.createElement("p")
+                    var p3=document.createElement("p")
+                    var p4=document.createElement("p")
+                    var p6=document.createElement("p")
+                    d1.classList.add("card")
+                    im.classList.add("card-img-top")
+                    d2.classList.add("card-body")
+                    h51.classList.add("card-title")
+                    p1.classList.add("card-text")
+                    p2.classList.add("card-text")
+                    p3.classList.add("card-text")
+                    p4.classList.add("card-text")
+                    p6.classList.add("card-text")
+                    im.src=result.sprites.other["official-artwork"].front_default
+                    //im.src=result.sprites.front_default
+                    h51.innerHTML="name:"+" "+result.name
+                    p1.innerHTML="hp:"+" "+result.stats[0].base_stat
+                    p2.innerHTML="attack :"+" "+result.stats[1].base_stat
+                    p3.innerHTML="weight :"+" "+result.weight
+                    p4.innerHTML="deffence :"+" "+result.stats[2].base_stat
+                    p6.innerHTML="speed :"+""+result.stats[5].base_stat
+                    d2.appendChild(h51)
+                    d2.appendChild(p1)
+                    d2.appendChild(p2)
+                    d2.appendChild(p3)
+                    d2.appendChild(p4)
+                    d2.appendChild(p6)
+                    result.types.forEach(function(s){
+                        console.log(s)
+                        var p5=document.createElement("p")
+                        p5.classList.add("card-text")
+                        p5.innerHTML= "type:"+" "+s.type.name
+                        d2.appendChild(p5)
+                    })
+                    d1.appendChild(im)
+                    d1.appendChild(d2)
+                    maindiv.appendChild(d1)  
+                })
+            }       
+    </script>
+</body>
+
+</html>

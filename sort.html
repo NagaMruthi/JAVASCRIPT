@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>
+            rough work
+        </title>
+    </head>
+    <body>
+        <button onclick="sort_of_age()">sort of age</button>
+        <button onclick="sort_of_name()">sort of name</button>
+
+        <script>
+            var student=[{
+                firstname: "surya",
+                age:21
+            },
+
+            {
+                firstname:"vamshi",
+                age:22
+
+            },
+
+            {
+                firstname: "sandeep",
+                age:25
+            },
+
+            {
+                firstname:"divya",
+                age: 26
+            }
+        
+        ];
+        function sort_of_age(){
+            student.sort(function(a,b){
+                if(a>b){
+                    return 1
+                    
+                }
+                else{
+                    return -1
+                }
+                return 0;
+            })
+        }
+            console.log(student);
+            function sort_of_name(){
+            student.sort(function(a,b){
+                if(a.firstname>b.firstname){
+                    return a;
+                    
+                }
+                else{
+                    return -z;
+                }return 0;
+            })
+        }
+            console.log(student);
+        </script>
+
+    </body>
+</html>

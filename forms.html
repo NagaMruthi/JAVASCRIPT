@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>forms</title>
+    </head>
+    <body>
+        <form name="studentform" onsubmit="event.preventDefault">
+            firstsname:
+            <input name="firstname" type="text" onkeyup="Updatefirstname(event)">
+           <br>
+            lastname:&nbsp;
+            <input name="lastname" type="text" onkeyup="Updatelastname(event)"><br>
+            dob;
+            <input name="dob" type="date" onchange="Updatedob(event)"><br>
+            age:
+            <input name="age" type="text" onkeyup="Updateage(event)">
+            <br>
+            gender:
+            <input type="radio" name="gender" value="male" onchange="Updategender(event)">male<br>
+            <input type="radio" name="gender" value="female" onchange="Updategender(event)">female<br>
+            <input type="radio" name="gender" value="other" onchange="Updategender(event)">other<br>
+            groups:
+            <input  name="group" type="checkbox" value="mpc" onchange="Updategroup(event)">mpc<br>
+            <input name="group" type="checkbox" value="bipc" onchange="Updategroup(event)">bipc<br>
+            <input name="group" type="checkbox" value="cec" onchange="Updategroup(event)">cec<br>
+            <input name="group" type="checkbox" value="mec" onchange="Updategroup(event)">mec<br>
+            <input name="group" type="checkbox" value="hec" onchange="Updategroup(event)">hec<br>
+            SELECTION;
+            <select name="selected" onchange="updateselected(event)">
+                <option  type="select" selected disabled>please select</option>
+                <option type="select" name="selected" value="us" onchange="updateselected(event)">us</option>
+                <option type="select" name="selected" value="srilanka" onchange="updateselected(event)">srilanka</option>
+                <option type="select" name="selected" value="pakistan" onchange="updateselected(event)">pakistan</option>
+            </select>
+            <br>
+            text;<br>
+            <textarea name="text" cols="50" rows="5" onkeyup="updatetext(event)" ></textarea><br>
+            <button type="button" onclick="abc(event)">submit</button>
+        </form>
+        <script>
+            var values={
+                firstname:"",
+                lastname:"",
+                dob:"",
+                age:"",
+                gender:"",
+                group:[],
+                selected:"",
+                text:"",
+            }
+            // function Updatefirstname(e){
+            // values.firstname=e.target.value;
+            // }
+            // function Updatefirstname(e){
+            //     var res=new RegExp("[a-z]");
+            //     res.test(e.target.value);
+            // }
+            function Updatelastname(e){
+            values.lastname=e.target.value;
+            }
+            function Updatedob(e){
+                values.dob=e.target.value;
+            }
+            function Updateage(e){
+            values.age=e.target.value;
+            }
+            function Updategender(e){
+            values.gender=e.target.value;
+            }
+            /*function Updategroup(e){
+                values.group.push(e.target.value);
+            }*/
+            function Updategroup(e){
+                if(e.target.checked){
+                    values.group.push(e.target.value)
+                }
+                else{
+                    var i=values.group.indexOf(e.target.value);
+                    values.group.splice(i,1);
+                }
+                
+            }
+            function updateselected(e){
+                values.selected=e.target.value;
+            }
+            function updatetext(e){
+                values.text=e.target.value;
+            }
+            function abc(){
+                console.log(values)
+            }
+        </script>
+    </body>
+</html>

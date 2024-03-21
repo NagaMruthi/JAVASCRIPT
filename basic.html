@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            // 1 Write a program to print the following output for the given values a=10,b=20 Output expected is: 10+20=30 10-20=-10 10*20=200 10/20=0 10%20=10
+            /*var a=10,b=20,s,sub,d,m,p;
+            s=a+b
+            sub=a-b
+            m=a*b
+            d=(parseInt(a/b));
+            p=a%b;
+            console.log(s)
+            console.log(sub)
+            console.log(m)
+            console.log(d)
+            console.log(p)
+            //2.Write a program to print the following for a given value a=3; Output expected: 3*1=3 3*2=6 3*3=9 3*4=12 3*5=15 3*6=18
+            var a=3,k1,k2,k3,k4,k5,k6;
+            k1=a*1
+            k2=a*2
+            k3=a*3
+            k4=a*4
+            k5=a*5
+            k6=a*6
+            console.log(k1)
+            console.log(k2)
+            console.log(k3)
+            console.log(k4)
+            console.log(k5)
+            console.log(k6)
+            //3.Given a variable var x = 23. Increment its value by 1.
+            var x=23
+            console.log(++x)
+            //4.Print the sum of 12 and 23 using the addition operator.
+            var a=12,b=23,sum;
+            sum=a+b
+            console.log(sum)
+            //5.Print the difference of 52 and 36 using the subtraction operator.
+            var z=52,y=36,sub;
+            sub=z-y
+            console.log(sub)
+            //6.Print the product of 23 and 56 using the multiplication operator.
+            var v=23,b=56,p;
+            p=v*b
+            console.log(p)
+            //7.Divide 36 by 5 and print the output by using the division operator.
+            var v=36,b=5,d;
+            d=v/b
+            console.log(d)
+            //8.Divide 67 by 4 and print the quotient.
+            var x=67,y=4,d;
+            d=(parseInt(x/y))
+            console.log(d)
+            //9.Divide 48 by 7 and print the remainder.
+            var y=48,z=7,p;
+            p=y%z
+            console.log(p)
+            //10.Print the value of 2 raised to the power of 6.
+            //11.Given var x = “Edupoly” and var y = “Training”. Print “Edupoly Training” in the console.
+            var x="Edupoly",y="Training",total;
+            total=x+y
+            console.log(total)
+            //12.Find the perimeter of a square having each side 4cm.
+            var x=4;
+            p=x*4
+            console.log(p)
+            //13.Find the perimeter of a rectangle of length 50cm and breadth 35cm.
+            var length=50,breadth=35;
+            console.log(2*length+2*breadth)
+            //14.Find the circumference of a circle of radius 20cm. (Take π = 3.14)
+            var radius=20,p=3.14;
+            circumference=2*3.14*20
+            console.log(circumference)
+            //15.Find the area of a square having each side 12cm.
+            var side=12;
+            console.log(side*side)
+            //16.Find the area of a rectangle of length 25cm and breadth 16cm.
+            var length=25,breadth=16;
+            area=length*breadth
+            console.log(area)
+            //17.Find the area of a circle of radius 3.75cm.
+            var r=3.75,p=3.14;
+            console.log(p*r*r)
+            //18.Given the marks of 3 subjects as 67,48 and 74. Print the average marks of the 3 subjects
+            var m1=67,m2=48,m3=74;
+            t=m1+m2+m3
+            n=3
+            console.log(t/n)
+            //19.Given the cost of a product as ₹538.56, add 18% GST to it and print the total cost.
+            var c=538.56;
+            g=0.18;
+            tgs=c*g;
+            total=c+tgs;
+            console.log(total)
+            //20.Given a variable var x = 48. Decrement its value by 1.
+            var x=48;
+            console.log(--x);
+            //21.Write a script to swap two numbers;
+            var x=2,y=5;
+            z=x;
+            x=y;
+            y=z;
+            console.log(y)
+            console.log(x)
+            //22.Write a script to swap two numbers without using 3rd variable (please use *,%,/ not + and -)
+            var x=2,y=5;
+            x=x*y;
+            y=x/y;
+            x=x/y;
+            console.log(x,y)
+            console.log(y,x)
+            //23.Write a program to print the reminder of a division
+            var x=10,y=15;
+            console.log(x%y)
+            //24.Write a program to print the simple interest rate of given P T R values
+            var ptr=1225636;
+            i=ptr/100;
+            console.log(i)
+            //26.Write a program to print the max of given two numbers using ternary operator
+            var x=23,y=52;
+            console.log(x>y)
+            console.log(x<y)
+            console.log(x>=y)
+            console.log(x>=y)
+            console.log(x!==y)
+            console.log(x==y)
+            console.log(x===y)
+            //28.Write a program to print the max of given three numbers using ternary operator
+            var x=23,y=52,z=67;
+            console.log(x>y)
+            console.log(x<z)
+            console.log(z>y)
+            console.log(x<y)
+            console.log(x>=z)
+            console.log(x>=y)
+            console.log(x!==y)
+            console.log(x==y)
+            console.log(y===z)
+            console.log(z===y)
+            console.log(x===z)
+            //29.Find the area of a square for given length of a side
+            var length=25;
+            area=length*length;
+            console.log(area)
+            //30.Find the area of a rectangle for given length and breadth
+            var l=25,b=23;
+            area=l*b;
+            console.log(area)
+            //31.Find the area of a triangle for given base and height
+            var height=22,base=28;
+            a=height*base/2;
+            console.log(a)
+            //32.Check a given number is even or using ternary operator
+            var n=4,d=40;
+            r=n%d;
+            console.log(r==0)
+            //33.Check a given number is odd or not using ternary operator
+            var n=20,d=7;
+            r=n>d;
+            console.log(r==0)
+            //34.Check a given number is positive orusing ternary operator
+            var x=23;
+            console.log(x<=0)
+            console.log(x>=0)
+            //35Check a given number is multiple of 4 or not using ternary operator
+            var x=4;
+            console.log(x%4==0)
+            //36.Print the (a+b)^2 for given a and b values
+            var a=34,b=43;
+            sum=a+b;
+            console.log(sum*sum)
+            //38.Print the (a+b+c)^2 for given a and b values
+            var a=34,b=43,c=34;
+            sum=a+b+c;
+            console.log(sum*sum)
+            //37.Print the (a+b+c)^2 for given a and b values
+            var a=34,b=43;
+            sum=a+b;
+            console.log(sum*sum*sum)
+            //39.Ramesh’s basic salary is input through the keyboard. His dearness allowance is 40% of basic salary, and house rent allowance is 20% of basic salary. Write a program to calculate his gross salary.
+            var salary=50000;
+            dearness=0.4*salary;
+            house=20*salary;
+            sum=dearness+house;
+            console.log(sum)
+            //40.The distance between two cities (in km.) is input through the keyboard. Write a program to convert and print this distance in meters, feet, inches and centimeters.
+            var distance=10;
+            meters=distance*1000;
+            console.log(meters);
+            feet=distance*3280.84;
+            console.log(feet);
+            var distance=10;
+            cm=distance*100000;
+            console.log(cm);
+            //41.If the marks obtained by a student in five different subjects are input through the keyboard, find out the aggregate marks and percentage marks obtained by the student. Assume that the maximum marks that can be obtained by a student in each subject is 100.
+            var english=78;
+            var telugu=94;
+            var maths=67;
+            var science=89;
+            var social=86;
+            value=english+telugu+maths+science+social;
+            total=500;
+            var percentage;
+            var h=100;
+            p=value/total*h;
+            console.log(parseInt(p));
+            //42.Temperature of a city in Fahrenheit degrees is input through the keyboard. Write a program to convert this temperature into Centigrade degrees.
+            var Fahrenheit=42;
+            cd=5/9*(42-32);
+            console.log(cd);
+            //43.The length & breadth of a rectangle and radius of a circle are input through the keyboard. Write a program to calculate the area & perimeter of the rectangle, and the area & circumference of the circle.
+            var length,breadth,radius,p,ar,areaofcircle,perimeteroftherectangle;
+            length=23;
+            breadth=43;
+            radius=22;
+            p=3.14;
+            ar=length*breadth;
+            console.log(ar);
+            areaofcircle=p*radius*radius;
+            console.log(areaofcircle);
+            perimeteroftherectangle=2*length+breadth;
+            console.log(perimeteroftherectangle);
+            //44.Two numbers are input through the keyboard into two locations C and D. Write a program to interchange the contents of C and D.
+           var C,D,v;
+           C="kphb";
+           D="jntuk";
+           v=C;
+           C=D;
+           D=v;
+           console.log(C);
+           console.log(D);
+           //45.If a five-digit number is input through the keyboard, write a program to calculate the sum of its digits. (Hint: Use the modulus operator ‘%’)
+           var i=+prompt();
+           console.log(i);*/
+           //64.Write a script to display the given two strings in ascending order using operators
+           var x=prompt();
+           var y=prompt();
+           if(x>y ||x<y){
+            console.log(y);
+            console.log(x)
+           }
+           
+        </script>
+            
+           
+    </body>
+</html>

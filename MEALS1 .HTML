@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    </head>
+    <body>
+        <input type="text" placeholder="meal name" id="inpt">
+        <button onclick="show()">Show</button>
+        <div id="dm" class="d-flex flex-wrap justify-content-evenly"></div>
+        <script>
+            var dm = document.getElementById('dm')
+            var inp = document.getElementById('inpt')
+            var meal = []
+            function show(){
+                var url = "https://www.themealdb.com/api/json/v1/1/search.php?s"
+                var x = inp.value
+                axios.get(`${url}=${x}`).then((res)=>{
+                    console.log(res.data)
+                    var meal=res.data.meals
+                    genCards(meal)
+                })
+            }
+            
+            function genCards(meal){
+                console.log(meal)
+                dm.innerHTML=""
+                meal.forEach((s)=>{
+                    var card = document.createElement('div')
+                    card.setAttribute('class','border w-25 m-3 p-4 bg-black rounded-1 text-white')
+                    var cardBody = document.createElement('div')
+
+                    var pic = document.createElement('img')
+                    pic.src=s.strMealThumb
+                    pic.setAttribute('class','w-100 mb-2 rounded-5')
+
+                    var nm = document.createElement('h5')
+                    nm.setAttribute('class','text-center')
+                    nm.innerHTML=s.strMeal
+
+                    var category = document.createElement('span');
+                    category.innerHTML=s.strCategory
+                    category.setAttribute('class','badge bg-warning')
+
+                    var area = document.createElement('span')
+                    area.innerHTML=s.strArea
+                    area.setAttribute('class','badge bg-success')
+
+                    var ingredients = document.createElement('ol')
+                    for(var i=1;i<=20;i++){
+                        var ing="strIngredient"+i
+                        var ingMes="strMeasure"+i
+                        if(s[ing].length>1){
+                            var ingredient = document.createElement('li')
+                            ingredient.innerHTML = s[ing]+": "+s[ingMes]
+                            ingredients.appendChild(ingredient)
+                        }
+                    }
+                    card.appendChild(pic)
+                    cardBody.appendChild(nm)
+                    cardBody.appendChild(category)
+                    cardBody.appendChild(area)
+                    cardBody.appendChild(ingredients)
+                    card.appendChild(cardBody)
+                    dm.appendChild(card)
+                })
+            }
+        </script>
+    </body>
+</html>

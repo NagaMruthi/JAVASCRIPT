@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    </head>
+    <body>
+        <div id="ad"></div>
+        <input type="text" id="kl" placeholder="search for a word">
+        <span class="bi bi-search" onclick="my()"></span>
+        <div>
+            <ul id="dm">
+            </ul>
+            <ol id="ol">
+                
+            </ol>
+        </div>
+        <script>
+            var x;
+            var kl=document.getElementById("kl")
+            var ul=document.getElementById("dm");
+            var ol=document.getElementById("ol")
+            function my(){ 
+            var str1="https://api.dictionaryapi.dev/api/v2/entries/en";
+            var str2=kl.value
+            axios.get(`${str1}/${str2}`).then(function(res){ 
+                 x=res.data;
+                console.log(x);
+                x.forEach(function(s){
+                var li1=document.createElement("li");
+                li1.innerHTML=s.word;
+                ul.appendChild(li1)
+                s.meanings.forEach(function(b,i){
+                    var li2=document.createElement("li");
+                    var p=document.createElement("li")
+                    p.innerHTML=b[0].partofspeech
+                    ol.appendChild(p)
+                li2.innerHTML="Defitions"+b.definitions[0].definition;
+                ol.appendChild(li2)
+                ul.appendChild(ol);
+                })
+             });
+            })
+            }
+        </script>
+    </body>
+</html>

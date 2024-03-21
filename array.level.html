@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            // var ae=[2,3,4,5,6,7,8,10];
+            // var count=0;
+            // for(var i=0; i<=ae.length-1;i++){
+            //         if(ae%2===0){
+            //             count=count++
+            //         }
+            // }
+            // console.log(count) 
+    //         var ar=[1,2,3,4];
+    //   for (var i=1;i<=ar.length-1;i++){
+    //     for(var j=1;i<=ar[j];j++){
+    //    if(ar[j]%2===0)
+    //    {
+    //     console.log(ar[i]);
+    //   }
+    var ar=[3,6,2];
+        var count=0;
+        var z=[]
+        var num;
+        for(var i=0;i<=ar.length-1;i++){
+            //console.log(ar[i])
+            num=(ar[i])
+            for(var j=1; j<=num;j++){
+                if(num%j===0){
+                //  console.log(num);
+                    count++;
+                }
+                if(count===2){
+                    z.push(num)    
+                }
+            }
+            
+        }
+        console.log(z)
+
+//console.log(count);
+
+// var a=2;
+// var count=0;
+// for(var i=1;i<=a;i++){
+//     if(a%i===0){
+//         count++;
+//     }
+// }
+// if(count===2){
+//     console.log("the given number is prime number")
+// }
+// else{
+//     console.log("not prime number")
+// }
+        </script>
+    </body>
+</html>

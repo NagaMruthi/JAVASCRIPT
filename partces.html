@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <body>
+      <form name="studentform" onsubmit="event.preventDefault">
+      firstname:
+      <br>
+      <input name="firstname" type="text" onkeyup="updatefirstname(event)">
+      <br>
+      <button name="button" onclick="abc(event)">submit</button>
+  </form><div class=""></div>..>
+  <script>
+     /*var b={
+      firstname:"",
+      
+  }
+  function updatefirstname(e){
+      b.firstname=e.target.value;
+  }
+      function abc(){
+          console.log(b)
+            }*/
+       /* <script>
+         /* var year=+prompt();
+          if ((0 == year % 4) && (0 != year % 100) || (0 == year % 400)) {
+        console.log(year + ' is a leap year');
+    } else {
+        console.log(year + ' is not a leap year');
+    }
+        /*function bulb_on(){
+          document. getElementById('bulb'). src='';
+          }
+          function bulb_off(){
+          document. getElementById('bulb'). src='';
+          }
+          function changeImage(){
+          var imgae=document.getElementById("dd")
+          if (image.src.match("bulbon")) {
+    image.src = "pic_bulboff.gif";
+  } else {
+    image.src = "pic_bulbon.gif";
+  }
+}
+        for (i = 1; i <= 5; i = i + 1) {
+            var str="";
+            for (j = 0; j < i; j = j + 1) {
+              var str += "*";
+            }
+            console.log(str);
+          }
+          for (i = 1; i <= 5; i = i + 1) {
+           var str 
+            for (j = 1; j < i; j = j + 1) {
+            str += "";
+            }
+            console.log(str);
+            }*/
+            /*//1.passing array to a function
+            function arr(a){
+              for(var i=0;i<arr.length-1;i++){
+                console.log(a[i])
+              }
+            }
+            var arr=[11,88,56];
+            console.log(arr)*/
+        </script>
+    </body>
+</html> -->
+<!-- <html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <button onclick="abc()">click</button>
+        <div id="dd"></div>
+        <script>
+            function abc(){
+            var x = document.getElementById("dd")
+        axios.get("https://pokeapi.co/api/v2/pokemon/23")
+        .then(function(response){
+            console.log(response.data)
+            var y=response.data;
+            var p1 = document.createElement("p");
+            p1.innerHTML=y.abilities[0].ability.name;
+            x.appendChild(p1); 
+            console.log(p1.innerHTML)    
+        })  
+    }     -->
+    <html>

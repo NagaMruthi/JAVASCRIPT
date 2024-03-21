@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <style>
+        #gg{
+            border:1px solid blue;
+            padding: 2px;
+        }
+    </style>
+    <body>
+       <div id="gg"></div>
+        <script>
+            
+            var ar=["maruthi","naga","vamsi"];
+            var y=document.getElementById("gg");
+            ar.forEach(function(s,i){
+                
+                var z=document.createElement("button");
+                z.innerHTML=s;
+                z.onclick=function(){alert(s)}
+                y.style.backgroundColor="red"
+                y.appendChild(z);
+
+            })
